@@ -11,13 +11,10 @@ export default function Home(){
     useEffect(()=>{
         async function fetchData() {
             try{
-                let data = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&regionCode=IN&maxResults=50&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
-
+                let data = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&regionCode=GB&maxResults=48&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
                 data = await data.json()
                 data = data.items
-
                 // console.log(data);
-                
                 let ids = data.map(x => x.snippet.channelId).join(',');
                 
                 let prom = await(await fetch(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${ids}&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)).json()

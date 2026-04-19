@@ -19,9 +19,8 @@ export default function Cards({video, channelImgUrl}){
     } else {
         views='No data'
     }
-    console.log("Linking to:", videoId)
     return (
-        <Link to={`/watch/${videoId}`}>
+        <Link to={`/watch/${videoId}`} className="video-redirector">
         <div className="video-container">
             <img src={thumbnail} alt="thumbail" className="thumbnail"/>
             <div className="card-video-details">
