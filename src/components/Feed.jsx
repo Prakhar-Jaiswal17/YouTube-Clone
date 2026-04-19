@@ -9,10 +9,8 @@ export default function Feed({data, channelImgUrl}){
     })
 
     return (
-        <Link to = '/video' className="video-redirector">
         <div id="container">
             {data}
         </div>
-        </Link>
     )
 }
