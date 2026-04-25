@@ -1,12 +1,13 @@
 import { useState,useEffect } from "react"
-
+import SearchPage from "./SearchPage.jsx"
 import Sidebar from "./Sidebar.jsx"
 import Feed from './Feed.jsx'
-
+import { useOutletContext } from "react-router-dom"
 export default function Home(){
 
     const [videos,setVideos] = useState([])
     const [channels,setChannels] = useState([])
+    const {sidebarDiplay} = useOutletContext()
 
     useEffect(()=>{
         async function fetchData() {
@@ -40,7 +41,8 @@ export default function Home(){
 
     return (
         <div id="Homepage">
-            <Sidebar />
+            {/* <Sidebar /> */}
+            {sidebarDiplay && <Sidebar />}
             <section id="home">
             <Feed data = {videos} channelImgUrl = {channels} />
             </section>
