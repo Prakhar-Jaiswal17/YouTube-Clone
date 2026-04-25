@@ -1,0 +1,481 @@
+.video-page-container {
+    display: flex;
+    gap: 24px;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 24px;
+    background-color: var(--bg-primary, #ffffff);
+    color: var(--text-primary, #0f0f0f);
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    max-width: 1280px;
+}
+
+.sidebar {
+    width: 400px;
+    flex-shrink: 0;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.5rem;
+    color: var(--text-secondary, #606060);
+}
+
+/* ============================================
+   VIDEO PLAYER
+   ============================================ */
+
+.video-player {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.player-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    background-color: #000;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.player-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ============================================
+   VIDEO INFO
+   ============================================ */
+
+.video-info {
+    margin-top: 12px;
+}
+
+.video-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
+    color: var(--text-primary, #0f0f0f);
+}
+
+/* Video Meta Section */
+.video-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Channel Info */
+.channel-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.channel-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.channel-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.channel-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-primary, #0f0f0f);
+}
+
+.subscriber-count {
+    font-size: 0.75rem;
+    color: var(--text-secondary, #606060);
+    margin: 0;
+}
+
+.subscribe-btn {
+    padding: 10px 16px;
+    border-radius: 18px;
+    border: none;
+    background-color: var(--subscribe-bg, #0f0f0f);
+    color: var(--subscribe-text, #ffffff);
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.subscribe-btn:hover {
+    background-color: var(--subscribe-hover, #272727);
+}
+
+.subscribe-btn.subscribed {
+    background-color: var(--subscribed-bg, #f2f2f2);
+    color: var(--text-primary, #0f0f0f);
+}
+
+.subscribe-btn.subscribed:hover {
+    background-color: var(--subscribed-hover, #e5e5e5);
+}
+
+/* Video Actions */
+.video-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 18px;
+    border: none;
+    background-color: var(--action-btn-bg, #f2f2f2);
+    color: var(--text-primary, #0f0f0f);
+    font-weight: 500;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background-color: var(--action-btn-hover, #e5e5e5);
+}
+
+.action-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.more-btn {
+    padding: 8px 12px;
+}
+
+/* Description Section */
+.video-description {
+    background-color: var(--description-bg, #f2f2f2);
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin: 16px 0;
+}
+
+.description-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.view-count {
+    color: var(--text-primary, #0f0f0f);
+}
+
+.description-text {
+    color: var(--text-primary, #0f0f0f);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.description-text.expanded {
+    -webkit-line-clamp: unset;
+    display: block;
+}
+
+.show-more-btn {
+    background: none;
+    border: none;
+    color: var(--text-primary, #0f0f0f);
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    padding: 8px 0 0 0;
+    margin-top: 8px;
+}
+
+.show-more-btn:hover {
+    text-decoration: underline;
+}
+
+/* Comments Section */
+.comments-section {
+    margin-top: 24px;
+}
+
+.comments-header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-primary, #0f0f0f);
+}
+
+.comments-placeholder {
+    color: var(--text-secondary, #606060);
+    font-size: 0.875rem;
+}
+
+/* ============================================
+   RECOMMENDED VIDEOS
+   ============================================ */
+
+.recommended-videos {
+    position: sticky;
+    top: 24px;
+}
+
+.recommended-header {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-primary, #0f0f0f);
+}
+
+.video-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.video-card {
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.video-card:hover {
+    background-color: var(--hover-bg, #f2f2f2);
+}
+
+.thumbnail-container {
+    flex-shrink: 0;
+    width: 168px;
+    height: 94px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow: hidden;
+}
+
+.video-card-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+    color: var(--text-primary, #0f0f0f);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.video-card-channel {
+    font-size: 0.75rem;
+    color: var(--text-secondary, #606060);
+    margin: 0;
+}
+
+.video-card-meta {
+    font-size: 0.75rem;
+    color: var(--text-secondary, #606060);
+}
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+
+[data-theme="dark"],
+.dark-mode {
+    --bg-primary: #0f0f0f;
+    --text-primary: #f1f1f1;
+    --text-secondary: #aaaaaa;
+    --subscribe-bg: #f1f1f1;
+    --subscribe-text: #0f0f0f;
+    --subscribe-hover: #d9d9d9;
+    --subscribed-bg: #272727;
+    --subscribed-hover: #3f3f3f;
+    --action-btn-bg: #272727;
+    --action-btn-hover: #3f3f3f;
+    --description-bg: #272727;
+    --hover-bg: #272727;
+}
+
+/* Apply dark mode to body if class exists */
+body.dark-mode .video-page-container,
+body[data-theme="dark"] .video-page-container {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .video-page-container {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .recommended-videos {
+        position: static;
+    }
+
+    .video-card {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .video-actions {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .action-btn {
+        flex: 1;
+        min-width: fit-content;
+    }
+
+    .thumbnail-container {
+        width: 140px;
+        height: 78px;
+    }
+
+    .video-title {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-page-container {
+        padding: 8px;
+    }
+
+    .player-wrapper {
+        border-radius: 0;
+    }
+
+    .channel-avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+    .subscribe-btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    .action-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .action-btn span {
+        display: none;
+    }
+
+    .thumbnail-container {
+        width: 120px;
+        height: 68px;
+    }
+}
+/* ============================================
+   DARK MODE - FIXED
+   ============================================ */
+
+/* 1. Force the variables to update when the 'dark' class is on body */
+body.dark {
+    --bg-primary: #0f0f0f;
+    --text-primary: #f1f1f1;
+    --text-secondary: #aaaaaa;
+    --subscribe-bg: #f1f1f1;
+    --subscribe-text: #0f0f0f;
+    --subscribe-hover: #d9d9d9;
+    --subscribed-bg: #272727;
+    --subscribed-hover: #3f3f3f;
+    --action-btn-bg: #272727;
+    --action-btn-hover: #3f3f3f;
+    --description-bg: #272727;
+    --hover-bg: #272727;
+}
+
+/* 2. Ensure the container actually uses the variables */
+body.dark .video-page-container {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+/* 3. Fix the Navigation and Sidebar if they are part of the page */
+body.dark nav, 
+body.dark #sidebar {
+    background-color: #0f0f0f;
+    color: white;
+}
+
+/* 4. Fix links and interactive text colors */
+body.dark .video-redirector,
+body.dark .show-more-btn,
+body.dark .video-card-channel,
+body.dark .video-card-meta {
+    color: var(--text-secondary);
+}
+
+body.dark .video-title,
+body.dark .video-card-title,
+body.dark .channel-name {
+    color: var(--text-primary);
+}
