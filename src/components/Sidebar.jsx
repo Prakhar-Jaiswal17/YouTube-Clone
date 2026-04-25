@@ -1,6 +1,4 @@
-import { useState,useEffect } from "react"
-
-export default function Sidebar(){
+export default function Sidebar() {
     return (
         <div id="sidebar">
             <ul>

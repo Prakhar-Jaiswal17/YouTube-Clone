@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react"
-
+import SearchPage from "./SearchPage.jsx"
 import Sidebar from "./Sidebar.jsx"
 import Feed from './Feed.jsx'
 
