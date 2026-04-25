@@ -20,7 +20,6 @@ export default function VideoPage() {
     async function fetchVideoData() {
       setLoading(true);
       try {
-        // Fetch video details
         let res = await fetch(
           `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${videoId}&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`,
         );
@@ -30,12 +29,10 @@ export default function VideoPage() {
           const videoData = data.items[0];
           let channelId = videoData.snippet.channelId;
 
-          // Fetch channel details
           const channelUrl = `https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${channelId}&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`;
           const channelRes = await fetch(channelUrl);
           const channelData = await channelRes.json();
 
-          // Set all state
           setTitle(videoData.snippet.title);
           setLikes(videoData.statistics.likeCount);
           setViews(videoData.statistics.viewCount);
