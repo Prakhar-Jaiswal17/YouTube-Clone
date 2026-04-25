@@ -24,7 +24,7 @@ export default function Cards({ video, channelImgUrl }) {
                 <img src={thumbnail} alt="thumbail" className="thumbnail" />
                 <div className="card-video-details">
                     <div>
-                        <img src={channelImgUrl} alt="Channel Image" />
+                        <img src={channelImgUrl} alt="Channel Image" className="card-video-img"/>
                     </div>
                     <div>
                         <h4>{title}</h4>

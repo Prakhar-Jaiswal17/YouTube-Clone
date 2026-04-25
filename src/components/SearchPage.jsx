@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react"
 import SearchCards from "./SearchCards"
+import { useParams } from "react-router-dom"
 
 function SearchPage() {
     const [videos, setVideos] = useState([])
     const [channels, setChannels] = useState({})
-    let query = useParams()
+    let { query } = useParams()
     // let query = 'nagisa'
-    let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&maxResults=10&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`
+    let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&maxResults=50&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`
     useEffect(() => {
         async function fetchingSearch() {
             try {

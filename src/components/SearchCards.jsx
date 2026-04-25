@@ -7,13 +7,16 @@ function SearchCards({ data, channelImgUrl }) {
     const videoId = data.id.videoId
     return (
         <Link to={`/watch/${videoId}`} className="video-redirector">
-            <div>
-                <div>
+            <div className="search-card">
+                <div className="search-card-thumbnail">
                     <img src={thumbnail} alt={title} />
                 </div>
-                <div>
+                <div className="search-card-details">
                     <h2>{title}</h2>
-                    <p>{channelTitle}</p>
+                    <div className="search-card-channel">
+                        <img src={channelImgUrl} alt={channelTitle} className='card-video-img' style={{marginRight:"10px"}}/>
+                        <span>{channelTitle}</span>
+                    </div>
                 </div>
             </div>
         </Link>
